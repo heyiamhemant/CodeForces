@@ -1,0 +1,39 @@
+{
+    "tasks": [
+        {
+            "label": "Compile and run",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "-f",
+                "${file}",
+                ".vscode/x.cpp",
+                "&&",
+                "g++",
+                ".vscode/x.cpp",
+                "-o",
+                ".vscode/x",
+                "&&",
+                ".vscode/x",
+                "<",
+                ".vscode/input.txt",
+                ">",
+                ".vscode/output.txt",
+                "2>",
+                ".vscode/error.txt",
+                "&&",
+                "rm",
+                "-f",
+                ".vscode/x",
+                ".vscode/x.cpp"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}
